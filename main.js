@@ -4,7 +4,17 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-
+const like=document.querySelectorAll(".like-glyph")
+like.forEach(like=>like.addEventListener("click",()=>{
+  mimicServerCall()
+  .then(()=>{})
+  .catch((error)=>{
+    const modal= document.querySelector(".hidden")
+    modal.className=""
+    modal.innerText=error
+  })
+  like.textContent=FULL_HEART
+}))
 
 
 //------------------------------------------------------------------------------
